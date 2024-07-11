@@ -17,7 +17,7 @@ def main():
     gender = st.selectbox('Gender', ['Male', 'Female'])
     height = st.number_input('Height (cm)', min_value=0.0, max_value=250.0)
     weight = st.number_input('Weight (kg)', min_value=0.0, max_value=200.0)
-
+    gender = 0 if gender == "Female" else 1
     # Preprocess the input features
     input_data = [[age, gender, height, weight]]
     input_data_scaled = scaler.transform(input_data)
